@@ -199,3 +199,54 @@ const autoScrollClients = () => {
 
 // Set interval for auto-scrolling
 setInterval(autoScrollClients, 3000); // Adjust the time (3000ms = 3 seconds) as needed
+// Auto-scroll certificates
+const certificatesList = document.querySelector("#certificates-list");
+const certificatesItems = document.querySelectorAll(".certificates-item");
+
+let currentCertificateIndex = 0;
+
+const autoScrollCertificates = () => {
+  // Scroll to the current certificate item
+  certificatesList.scrollTo({
+    left: certificatesItems[currentCertificateIndex].offsetLeft,
+    behavior: "smooth",
+  });
+
+  // Move to the next certificate item
+  currentCertificateIndex = (currentCertificateIndex + 1) % certificatesItems.length;
+};
+
+// Set interval for auto-scrolling
+setInterval(autoScrollCertificates, 3000); // Adjust the time (3000ms = 3 seconds) as needed
+
+// Certificates modal functionality
+const certificateImages = document.querySelectorAll(".certificates-item img");
+const certificatesModal = document.getElementById("certificates-modal");
+const modalCertificateImage = document.getElementById("modal-certificate-image");
+const certificatesOverlay = document.getElementById("certificates-overlay");
+const certificatesCloseBtn = document.getElementById("certificates-close-btn");
+
+// Open modal when a certificate is clicked
+certificateImages.forEach((item) => {
+  item.addEventListener("click", () => {
+    modalCertificateImage.src = item.src;
+    modalCertificateImage.alt = item.alt;
+    certificatesModal.classList.add("active");
+  });
+});
+
+// Close modal when overlay or close button is clicked
+certificatesOverlay.addEventListener("click", () => {
+  certificatesModal.classList.remove("active");
+});
+
+certificatesCloseBtn.addEventListener("click", () => {
+  certificatesModal.classList.remove("active");
+});
+
+// Close modal when clicking outside the modal content
+certificatesModal.addEventListener("click", (event) => {
+  if (event.target === certificatesModal) {
+    certificatesModal.classList.remove("active");
+  }
+});

@@ -215,7 +215,7 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">Về tôi</h2>
+            <h2 class="h2 article-title">Giới thiệu bản thân</h2>
         </header>
 
         <section class="about-text">
@@ -248,7 +248,7 @@
         -->
 
         <section class="service">
-          <h3 class="h3 service-title">Những gì tôi đang làm</h3>
+          <h3 class="h3 service-title ">Những gì tôi đang làm</h3>
           <ul class="service-list">
 
             <!-- Thuật toán & cấu trúc dữ liệu -->
@@ -314,7 +314,7 @@
 
         <section class="testimonials">
 
-          <h3 class="h3 testimonials-title">Thành tích nổi bật</h3>
+            <h3 class="h3 testimonials-title">Thành Tích Nổi Bật Trong Các Cuộc Thi</h3>
 
           <ul class="testimonials-list has-scrollbar" id="testimonials-list">
 
@@ -344,8 +344,8 @@
                   <img src="./assets/images/icon-icpc.svg" alt="ICPC" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>The 2024 ICPC Vietnam National
-                  Contest </h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>ICPC Vietnam National
+                  PC 2024 </h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
@@ -355,7 +355,60 @@
 
               </div>
             </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
 
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/icon-icpc.svg" alt="ICPC" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>ICPC Vietnam Southern Provincial PC 2024
+                </h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Thành viên đội SIU_Sirocco; giải 4 bài; hạng 260/636, nhận Chứng nhận Honorable Mention.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/icon-icpc.svg" alt="ICPC" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>ICPC Vietnam Central Provincial PC 2024
+                </h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Thành viên đội SIU_Sirocco; giải 5 bài; hạng 210/557, nhận Chứng nhận Honorable Mention.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+            <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/icon-icpc.svg" alt="ICPC" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>ICPC Vietnam Northern Provincial PC 2024
+                </h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Thành viên đội SIU_Sirocco; giải 3 bài; hạng 224/508, nhận Chứng nhận Honorable Mention.
+                  </p>
+                </div>
+
+              </div>
+            </li>
             <li class="testimonials-item">
               <div class="content-card" data-testimonials-item>
 
@@ -445,11 +498,11 @@
 
               <div data-modal-text>
                 <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                  <!-- Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
                   lot of experience
                   and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
                   consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia. -->
                 </p>
               </div>
 
@@ -461,11 +514,56 @@
 
 
         <!--
+          - certificates
+        -->
+        <section class="certificates">
+          <h3 class="h3 certificates-title">Chứng Chỉ</h3>
+          <ul class="certificates-list has-scrollbar" id="certificates-list">
+            <li class="certificates-item">
+              <figure class="certificates-image-box">
+                <img src="./assets/images/certificate-regional-2024.png" alt="Certificate 2" width="200">
+              </figure>
+            </li>
+            <li class="certificates-item">
+              <figure class="certificates-image-box">
+                <img src="./assets/images/certificate-national-2024.png" alt="Certificate 2" width="200">
+              </figure>
+            </li>
+            <li class="certificates-item">
+              <figure class="certificates-image-box">
+                <img src="./assets/images/certificate-central-2024.png" alt="Certificate 2" width="200">
+              </figure>
+            </li>
+            <li class="certificates-item">
+              <figure class="certificates-image-box">
+                <img src="./assets/images/certificate-southern-2023.png" alt="Certificate 2" width="200">
+              </figure>
+            </li>
+            <!-- Thêm các chứng chỉ khác tại đây -->
+          </ul>
+        </section>
+
+
+        <!--
+          - certificates modal
+        -->
+        <div class="modal-container certificates-modal" id="certificates-modal">
+          <div class="overlay certificates-overlay" id="certificates-overlay"></div>
+          <div class="modal-content">
+            <button class="modal-close-btn" id="certificates-close-btn">
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+            <figure class="modal-image-box">
+              <img id="modal-certificate-image" src="" alt="Certificate">
+            </figure>
+          </div>
+        </div>
+        <!--
           - clients
         -->
 
         <section class="clients">
-          <h3 class="h3 clients-title">Công nghệ &amp; Công cụ</h3>
+            <h3 class="h3 clients-title">Công nghệ và Công cụ Tôi Sử Dụng</h3>
           <ul class="clients-list has-scrollbar"">
 
             <!-- C/C++ -->
@@ -527,6 +625,9 @@
 
           </ul>
         </section>
+
+
+
 
 
       </article>
