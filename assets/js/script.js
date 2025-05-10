@@ -157,3 +157,45 @@ for (let i = 0; i < navigationLinks.length; i++) {
     }
   });
 }
+
+
+// ...existing code...
+
+// Auto-scroll testimonials
+const testimonialsList = document.querySelector("#testimonials-list");
+const testimonialsItems = document.querySelectorAll(".testimonials-item");
+
+let currentIndex = 0;
+
+const autoScrollTestimonials = () => {
+  // Scroll to the current item
+  testimonialsList.scrollTo({
+    left: testimonialsItems[currentIndex].offsetLeft,
+    behavior: "smooth",
+  });
+
+  // Move to the next item
+  currentIndex = (currentIndex + 1) % testimonialsItems.length;
+};
+
+// Set interval for auto-scrolling
+setInterval(autoScrollTestimonials, 3000); // Adjust the time (3000ms = 3 seconds) as needed
+// Auto-scroll clients
+const clientsList = document.querySelector(".clients-list");
+const clientsItems = document.querySelectorAll(".clients-item");
+
+let currentClientIndex = 0;
+
+const autoScrollClients = () => {
+  // Scroll to the current client item
+  clientsList.scrollTo({
+    left: clientsItems[currentClientIndex].offsetLeft,
+    behavior: "smooth",
+  });
+
+  // Move to the next client item
+  currentClientIndex = (currentClientIndex + 1) % clientsItems.length;
+};
+
+// Set interval for auto-scrolling
+setInterval(autoScrollClients, 3000); // Adjust the time (3000ms = 3 seconds) as needed

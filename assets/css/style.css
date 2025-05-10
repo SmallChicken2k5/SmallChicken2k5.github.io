@@ -1402,6 +1402,8 @@ textarea.form-input::-webkit-resizer { display: none; }
   .testimonials-title { margin-bottom: 25px; }
 
   .testimonials-list {
+    /* overflow-x: auto;
+    scroll-behavior: smooth; */
     gap: 30px;
     margin: 0 -30px;
     padding: 30px;
