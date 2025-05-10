@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard - Personal Portfolio</title>
+  <title>Thái Hồ Phú Gia</title>
 
   <!--
     - favicon
@@ -42,13 +42,13 @@
       <div class="sidebar-info">
 
         <figure class="avatar-box">
-          <img src="./assets/images/my-avatar.png" alt="Richard hanrick" width="80">
+          <img src="./assets/images/avatar-removebackground.png" alt="Gia" width="80">
         </figure>
 
         <div class="info-content">
-          <h1 class="name" title="Richard hanrick">Richard hanrick</h1>
+          <h1 class="name" title="Thái Hồ Phú Gia">Thái Hồ Phú Gia</h1>
 
-          <p class="title">Web developer</p>
+          <p class="title">Computer Science Student</p>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -64,87 +64,83 @@
         <div class="separator"></div>
 
         <ul class="contacts-list">
-
+          <!-- Email -->
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="mail-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Email</p>
-
-              <a href="mailto:richard@example.com" class="contact-link">richard@example.com</a>
+              <a href="mailto:thp.gia@gmail.com" class="contact-link">thp.gia@gmail.com</a>
             </div>
-
           </li>
 
+          <!-- Phone -->
           <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="phone-portrait-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Phone</p>
-
-              <a href="tel:+12133522795" class="contact-link">+1 (213) 352-2795</a>
+              <a href="tel:0386125657" class="contact-link">038-612-5657</a>
             </div>
-
           </li>
 
+
+          <!-- Location -->
           <li class="contact-item">
-
-            <div class="icon-box">
-              <ion-icon name="calendar-outline"></ion-icon>
-            </div>
-
-            <div class="contact-info">
-              <p class="contact-title">Birthday</p>
-
-              <time datetime="1982-06-23">June 23, 1982</time>
-            </div>
-
-          </li>
-
-          <li class="contact-item">
-
             <div class="icon-box">
               <ion-icon name="location-outline"></ion-icon>
             </div>
-
             <div class="contact-info">
               <p class="contact-title">Location</p>
-
-              <address>Sacramento, California, USA</address>
+              <address>TP. Hồ Chí Minh, Việt Nam</address>
             </div>
-
           </li>
 
+          <!-- GitHub -->
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="logo-github"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">GitHub</p>
+              <a href="https://github.com/SmallChicken2k5" class="contact-link">SmallChicken2k5</a>
+            </div>
+          </li>
+
+          <!-- Codeforces Rating -->
+          <li class="contact-item">
+            <div class="icon-box">
+              <ion-icon name="stats-chart-outline"></ion-icon>
+            </div>
+            <div class="contact-info">
+              <p class="contact-title">Codeforces</p>
+              <a href="https://codeforces.com/profile/smallchick_gia" class="contact-link">
+                smallchick_gia
+              </a>
+            </div>
+          </li>
         </ul>
-
         <div class="separator"></div>
-
         <ul class="social-list">
-
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://www.facebook.com/phugia.thaiho" class="social-link" target="_blank"
+              rel="noopener noreferrer">
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://x.com/Thp_Gia" class="social-link" target="_blank" rel="noopener noreferrer">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
-
           <li class="social-item">
-            <a href="#" class="social-link">
+            <a href="https://www.instagram.com/smchick.gia/" class="social-link" target="_blank"
+              rel="noopener noreferrer">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
-
         </ul>
 
       </div>
@@ -172,8 +168,23 @@
           <li class="navbar-item">
             <button class="navbar-link  active" data-nav-link>About</button>
           </li>
+            <li class="navbar-item">
+            <button class="navbar-link" onclick="alert('Resume section is under development!')">Resume</button>
+            </li>
 
-          <li class="navbar-item">
+            <li class="navbar-item">
+            <button class="navbar-link" onclick="alert('Portfolio section is under development!')">Portfolio</button>
+            </li>
+
+            <li class="navbar-item">
+            <button class="navbar-link" onclick="alert('Blog section is under development!')">Blog</button>
+            </li>
+
+            <li class="navbar-item">
+            <button class="navbar-link" onclick="alert('Contact section is under development!')">Contact</button>
+            </li>
+
+          <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
           </li>
 
@@ -187,7 +198,7 @@
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
-          </li>
+          </li> -->
 
         </ul>
 
@@ -204,24 +215,24 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">About me</h2>
+          <h2 class="h2 article-title">Về tôi</h2>
         </header>
 
         <section class="about-text">
           <p>
-            I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-            I enjoy
-            turning complex problems into simple, beautiful and intuitive designs.
+            Tôi là Thái Hồ Phú Gia, sinh viên ngành Khoa học Máy tính chuyên ngành Mạng máy tính tại Đại học Quốc tế
+            Sài Gòn. Tôi đam mê cả phát triển backend lẫn frontend, và đặc biệt quan tâm đến mạng máy tính, an ninh mạng
+            cùng trí tuệ nhân tạo (AI).
           </p>
 
           <p>
-            My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-            Moreover, I
-            add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-            across your
-            message and identity in the most creative way. I created web design for many famous brand companies.
+            Hiện tại tôi đang khám phá phát triển web, quản trị hệ thống và triển khai các mô hình học máy với Python
+            (TensorFlow, PyTorch), đồng thời tích hợp AI vào các ứng dụng thực tế. Tôi là người chủ động, ham học hỏi và
+            kiên trì trong việc giải quyết vấn đề. Tôi luôn tìm kiếm cơ hội tham gia vào các dự án thực tiễn để nâng cao
+            kỹ năng và mở rộng kiến thức trong lĩnh vực công nghệ — đặc biệt là AI và mạng máy tính.
           </p>
         </section>
+
 
 
         <!--
@@ -229,79 +240,64 @@
         -->
 
         <section class="service">
-
-          <h3 class="h3 service-title">What i'm doing</h3>
-
+          <h3 class="h3 service-title">Những gì tôi đang làm</h3>
           <ul class="service-list">
 
+            <!-- Thuật toán & cấu trúc dữ liệu -->
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/icon-design.svg
-                " alt="design icon" width="40">
+                <img src="./assets/images/icon-algo.svg" alt="algorithm icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web design</h4>
-
+                <h4 class="h4 service-item-title">Algorithms & Data Structures</h4>
                 <p class="service-item-text">
-                  The most modern and high-quality design made at a professional level.
+                  Nghiên cứu và giải quyết bài toán bằng cách triển khai các thuật toán cơ bản, tối ưu hóa độ phức tạp.
                 </p>
               </div>
-
             </li>
 
+            <!-- Phát triển phần mềm -->
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/icon-dev.svg" alt="Web development icon" width="40">
+                <img src="./assets/images/icon-dev.svg" alt="software development icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Web development</h4>
-
+                <h4 class="h4 service-item-title">Software Development</h4>
                 <p class="service-item-text">
-                  High-quality development of sites at the professional level.
+                  Xây dựng ứng dụng web & desktop với các ngôn ngữ và framework hiện đại như Java, Python, React.
                 </p>
               </div>
-
             </li>
 
+            <!-- Hệ thống mạng & an ninh -->
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/icon-app.svg" alt="mobile app icon" width="40">
+                <img src="./assets/images/icon-iot.svg" alt="iot icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Mobile apps</h4>
-
+                <h4 class="h4 service-item-title">Internet of Things (IoT)</h4>
                 <p class="service-item-text">
-                  Professional development of applications for iOS and Android.
+                  Nghiên cứu và phát triển các ứng dụng IoT, kết nối thiết bị thông minh và tối ưu hóa hệ thống.
                 </p>
               </div>
-
             </li>
 
+            <!-- Tham gia cuộc thi học thuật như ICPC -->
             <li class="service-item">
-
               <div class="service-icon-box">
-                <img src="./assets/images/icon-photo.svg" alt="camera icon" width="40">
+                <img src="./assets/images/icon-contest.svg" alt="hackathon icon" width="40">
               </div>
-
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Photography</h4>
-
+                <h4 class="h4 service-item-title">International Collegiate Programming Contest</h4>
                 <p class="service-item-text">
-                  I make high-quality photos of any category at a professional level.
+                  Tham gia các cuộc thi ICPC và học thuật để rèn luyện tư duy thuật toán và kỹ năng giải quyết vấn đề.
                 </p>
               </div>
-
             </li>
 
           </ul>
-
         </section>
+
 
 
         <!--
@@ -310,7 +306,7 @@
 
         <section class="testimonials">
 
-          <h3 class="h3 testimonials-title">Testimonials</h3>
+          <h3 class="h3 testimonials-title">Thành tích nổi bật</h3>
 
           <ul class="testimonials-list has-scrollbar">
 
@@ -318,18 +314,15 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/icon-icpc.svg" alt="ICPC" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>The 2024 ICPC Asia Hanoi Regional
+                  Contest </h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Thành viên đội SIU_Sirocco; giải 3 bài; hạng 107/137, nhận Chứng nhận Honorable Mention.
                   </p>
                 </div>
 
@@ -340,18 +333,15 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/icon-icpc.svg" alt="ICPC" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>The 2024 ICPC Vietnam National
+                  Contest </h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Thành viên đội SIU_Sirocco; giải 3 bài; hạng 302/437, nhận Chứng nhận Honorable Mention.
                   </p>
                 </div>
 
@@ -362,18 +352,14 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/icon-olp.svg" alt="OLP" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>OLP HAUI 2024</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Giải Ba Olympic Tin học Sinh Viên Việt Nam- Đại Học Công Nghiệp Hà Nội 2024 - Khối Chuyên Tin.
                   </p>
                 </div>
 
@@ -384,23 +370,37 @@
               <div class="content-card" data-testimonials-item>
 
                 <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
+                  <img src="./assets/images/icon-olp.svg" alt="OLP" width="60" data-testimonials-avatar>
                 </figure>
 
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>OLP HUSC 2023</h4>
 
                 <div class="testimonials-text" data-testimonials-text>
                   <p>
-                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                    lot of experience
-                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                    consectetur adipiscing
-                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                    Giải Nhì Olympic Tin học Sinh Viên Việt Nam- Đại Học Khoa Học Tự Nhiên Huế 2023 - Khối Chuyên Tin.
                   </p>
                 </div>
 
               </div>
             </li>
+
+            <!-- <li class="testimonials-item">
+              <div class="content-card" data-testimonials-item>
+
+                <figure class="testimonials-avatar-box">
+                  <img src="./assets/images/avatar-4.png" alt="Top 10 Codeforces" width="60" data-testimonials-avatar>
+                </figure>
+
+                <h4 class="h4 testimonials-item-title" data-testimonials-title>Top 10 Codeforces</h4>
+
+                <div class="testimonials-text" data-testimonials-text>
+                  <p>
+                    Lọt vào Top 10 lập trình viên xuất sắc trên nền tảng Codeforces tại Việt Nam, với xếp hạng Expert.
+                  </p>
+                </div>
+
+              </div>
+            </li> -->
 
           </ul>
 
@@ -433,7 +433,7 @@
 
               <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
 
-              <time datetime="2021-06-14">14 June, 2021</time>
+              <!-- <time datetime="2021-06-14">14 June, 2021</time> -->
 
               <div data-modal-text>
                 <p>
@@ -457,50 +457,69 @@
         -->
 
         <section class="clients">
-
-          <h3 class="h3 clients-title">Clients</h3>
-
+          <h3 class="h3 clients-title">Công nghệ &amp; Công cụ</h3>
           <ul class="clients-list has-scrollbar">
 
+            <!-- C/C++ -->
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-1-color.png" alt="client logo">
+              <a href="https://isocpp.org/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg"
+                  alt="C++ logo" width="60">
+              </a>
+            </li>
+            <!-- Python -->
+            <li class="clients-item">
+              <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg"
+                  alt="Python logo" width="60">
               </a>
             </li>
 
+            <!-- Java -->
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-2-color.png" alt="client logo">
+              <a href="https://www.oracle.com/java/" target="_blank" rel="noopener noreferrer">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg"
+                  alt="Java logo" width="60">
               </a>
             </li>
 
+            <!-- JavaScript -->
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-3-color.png" alt="client logo">
+              <a href="https://developer.mozilla.org/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg"
+                  alt="JavaScript logo" width="60">
               </a>
             </li>
 
+            <!-- React -->
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-4-color.png" alt="client logo">
+              <a href="https://reactjs.org/" target="_blank" rel="noopener noreferrer">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg"
+                  alt="React logo" width="60">
+              </a>
+            </li>
+            <!-- MVC -->
+            <li class="clients-item">
+              <a href="https://dotnet.microsoft.com/apps/aspnet/mvc" target="_blank" rel="noopener noreferrer">
+                <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dot-net/dot-net-original.svg"
+                  alt="ASP.NET MVC logo" width="60">
               </a>
             </li>
 
+            <!-- TensorFlow -->
             <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-5-color.png" alt="client logo">
-              </a>
-            </li>
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/logo-6-color.png" alt="client logo">
+              <a href="https://www.tensorflow.org/" target="_blank" rel="noopener noreferrer">
+                <img
+                  src="https://raw.githubusercontent.com/devicons/devicon/master/icons/tensorflow/tensorflow-original.svg"
+                  alt="TensorFlow logo" width="60">
               </a>
             </li>
 
           </ul>
-
         </section>
+
 
       </article>
 
