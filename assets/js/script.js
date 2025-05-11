@@ -254,7 +254,7 @@ let currentCertificateIndex = 0;
 const autoScrollCertificates = () => {
   // Scroll to the current certificate item
   certificatesList.scrollTo({
-    left: certificatesItems[currentCertificateIndex].offsetLeft,
+    left: certificatesItems[currentCertificateIndex].offsetLeft - certificatesList.scrollLeft,
     behavior: "smooth",
   });
 
