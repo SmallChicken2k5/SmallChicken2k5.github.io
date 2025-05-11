@@ -23,6 +23,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+   <!-- #captcha -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -180,9 +185,9 @@
             <button class="navbar-link" onclick="alert('Blog section is under development!')">Blog</button>
           </li>
 
-          <li class="navbar-item">
+          <!-- <li class="navbar-item">
             <button class="navbar-link" onclick="alert('Contact section is under development!')">Contact</button>
-          </li>
+          </li> -->
 
           <!-- <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Resume</button>
@@ -194,11 +199,11 @@
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Blog</button>
-          </li>
+          </li> -->
 
           <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Contact</button>
-          </li> -->
+          </li>
 
         </ul>
 
@@ -215,7 +220,7 @@
       <article class="about  active" data-page="about">
 
         <header>
-          <h2 class="h2 article-title">Giới thiệu bản thân</h2>
+          <h2 class="h2 article-title">About me</h2>
         </header>
 
         <section class="about-text">
@@ -248,7 +253,7 @@
         -->
 
         <section class="service">
-          <h3 class="h3 service-title ">Những gì tôi đang làm</h3>
+          <h3 class="h3 service-title">What I'm Doing</h3>
           <ul class="service-list">
 
             <!-- Thuật toán & cấu trúc dữ liệu -->
@@ -314,7 +319,7 @@
 
         <section class="testimonials">
 
-          <h3 class="h3 testimonials-title">Thành Tích Nổi Bật Trong Các Cuộc Thi</h3>
+          <h3 class="h3 testimonials-title">Outstanding Achievements in Competitions</h3>
 
           <ul class="testimonials-list has-scrollbar" id="testimonials-list">
 
@@ -517,7 +522,7 @@
           - certificates
         -->
         <section class="certificates">
-          <h3 class="h3 certificates-title">Chứng Chỉ</h3>
+          <h3 class="h3 certificates-title">certificates</h3>
           <ul class="certificates-list has-scrollbar" id="certificates-list">
             <li class="certificates-item">
               <figure class="certificates-image-box">
@@ -565,7 +570,7 @@
         -->
 
         <section class="clients">
-          <h3 class="h3 clients-title">Công nghệ và Công cụ Tôi Sử Dụng</h3>
+          <h3 class="h3 clients-title">Technologies and Tools</h3>
           <ul class="clients-list has-scrollbar"">
 
             <!-- C/C++ -->
@@ -1276,8 +1281,9 @@
         <section class="mapbox" data-mapbox>
           <figure>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-              width="400" height="300" loading="lazy"></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d501725.41846829245!2d106.36557870369856!3d10.755292848979929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x317529292e8d3dd1%3A0xf15f5aad773c112b!2zVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBI4buTIENow60gTWluaCwgVmnhu4d0IE5hbQ!5e0!3m2!1svi!2s!4v1746934899942!5m2!1svi!2s"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
           </figure>
         </section>
 
@@ -1286,20 +1292,16 @@
           <h3 class="h3 form-title">Contact Form</h3>
 
           <form action="#" class="form" data-form>
-
             <div class="input-wrapper">
               <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
-
               <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
             </div>
-
             <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
-
+             <!-- <div class="g-recaptcha" data-sitekey="6LeXjzUrAAAAAAB1mqFm0v3Fff8CLnO86EXgrpt1S"></div> -->
             <button class="form-btn" type="submit" disabled data-form-btn>
               <ion-icon name="paper-plane"></ion-icon>
               <span>Send Message</span>
             </button>
-
           </form>
 
         </section>

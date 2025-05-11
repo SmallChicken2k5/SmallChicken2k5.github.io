@@ -115,24 +115,68 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 
 
-// contact form variables
+// // contact form variables
+// const form = document.querySelector("[data-form]");
+// const formInputs = document.querySelectorAll("[data-form-input]");
+// const formBtn = document.querySelector("[data-form-btn]");
+
+// // add event to all form input field
+// for (let i = 0; i < formInputs.length; i++) {
+//   formInputs[i].addEventListener("input", function () {
+
+//     // check form validation
+//     if (form.checkValidity()) {
+//       formBtn.removeAttribute("disabled");
+//     } else {
+//       formBtn.setAttribute("disabled", "");
+//     }
+
+//   });
+// }
+'use strict';
+
+// Initialize EmailJS
+emailjs.init("zRPklF_kQUCgS5tQL"); // Thay YOUR_USER_ID bằng User ID từ EmailJS
+
+// Contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
 
-// add event to all form input field
-for (let i = 0; i < formInputs.length; i++) {
-  formInputs[i].addEventListener("input", function () {
+// Add event listener to the form
+form.addEventListener("submit", function (event) {
+  event.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
-    // check form validation
+  // Lấy dữ liệu từ form
+  const formData = {
+    fullname: form.fullname.value,
+    email: form.email.value,
+    message: form.message.value,
+  };
+
+  // Gửi email qua EmailJS
+  emailjs.send("personal-site3", "template_712wypv", formData)
+    .then(() => {
+      alert("Email sent successfully!");
+      form.reset(); // Reset form sau khi gửi thành công
+      formBtn.setAttribute("disabled", ""); // Vô hiệu hóa nút gửi
+    })
+    .catch((error) => {
+      console.error("Failed to send email:", error);
+      alert("Failed to send email. Please try again later.");
+    });
+});
+
+// Enable/disable submit button based on form validation
+formInputs.forEach((input) => {
+  input.addEventListener("input", () => {
     if (form.checkValidity()) {
       formBtn.removeAttribute("disabled");
     } else {
       formBtn.setAttribute("disabled", "");
     }
-
   });
-}
+});
 
 
 
@@ -141,22 +185,24 @@ const navigationLinks = document.querySelectorAll("[data-nav-link]");
 const pages = document.querySelectorAll("[data-page]");
 
 // add event to all nav link
-for (let i = 0; i < navigationLinks.length; i++) {
-  navigationLinks[i].addEventListener("click", function () {
+navigationLinks.forEach((link) => {
+  link.addEventListener("click", function () {
     const targetPage = this.innerHTML.toLowerCase();
 
-    for (let j = 0; j < pages.length; j++) {
-      if (pages[j].dataset.page === targetPage) {
-        pages[j].classList.add("active");
-        navigationLinks[i].classList.add("active");
-        window.scrollTo(0, 0);
+    pages.forEach((page) => {
+      if (page.dataset.page === targetPage) {
+        page.classList.add("active");
       } else {
-        pages[j].classList.remove("active");
-        navigationLinks[j].classList.remove("active");
+        page.classList.remove("active");
       }
-    }
+    });
+
+    navigationLinks.forEach((nav) => nav.classList.remove("active"));
+    this.classList.add("active");
+
+    window.scrollTo(0, 0);
   });
-}
+});
 
 
 // ...existing code...

@@ -1291,7 +1291,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   }
 
   .article-title::after {
-    width: 150px;
+    width: 70px;
     height: 5px;
   }
 
@@ -1909,7 +1909,7 @@ textarea.form-input::-webkit-resizer { display: none; }
   border: 2px solid transparent; /* Đặt viền trong suốt */
   background: linear-gradient(to right, #00FFFF, #9B59B6); /* Gradient màu */
 }
-/* Certificates Modal */
+
 /* Certificates Modal */
 .certificates-modal {
   position: fixed;
@@ -2010,4 +2010,27 @@ textarea.form-input::-webkit-resizer { display: none; }
 .modal-close-btn:hover,
 .modal-close-btn:focus {
   opacity: 1;
+}
+/* Gradient animation for text */
+.gradient-title {
+  background: linear-gradient(90deg, #00FFFF, #9B59B6, #FF5733); /* Gradient màu */
+  background-size: 200% 200%; /* Kích thước gradient */
+  background-clip: text; /* Đoạn này chỉ áp dụng gradient vào chữ */
+  -webkit-background-clip: text; /* Hỗ trợ trình duyệt webkit */
+  -webkit-text-fill-color: transparent; /* Làm chữ trong suốt để thấy gradient */
+  animation: gradient-text 3s ease infinite; /* Hiệu ứng gradient di chuyển */
+  text-align: center; /* Định dạng ở giữa */
+}
+
+/* Thêm hiệu ứng chuyển động gradient */
+@keyframes gradient-text {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
