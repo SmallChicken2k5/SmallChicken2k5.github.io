@@ -232,21 +232,17 @@ certificateImages.forEach((item) => {
     modalCertificateImage.src = item.src;
     modalCertificateImage.alt = item.alt;
     certificatesModal.classList.add("active");
+    certificatesOverlay.classList.add("active");
   });
 });
 
 // Close modal when overlay or close button is clicked
 certificatesOverlay.addEventListener("click", () => {
   certificatesModal.classList.remove("active");
+  certificatesOverlay.classList.remove("active");
 });
 
 certificatesCloseBtn.addEventListener("click", () => {
   certificatesModal.classList.remove("active");
-});
-
-// Close modal when clicking outside the modal content
-certificatesModal.addEventListener("click", (event) => {
-  if (event.target === certificatesModal) {
-    certificatesModal.classList.remove("active");
-  }
+  certificatesOverlay.classList.remove("active");
 });
