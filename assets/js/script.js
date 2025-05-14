@@ -169,56 +169,81 @@ const sendContactForm = (formData) => {
   return emailjs.send("personal-site3", "template_712wypv", formData);
 };
 
+// Hàm kiểm tra email qua API
+const validateEmail = async (email) => {
+  const apiKey = "ca1bae69729266b399114125e5d088fb"; // Thay bằng API Key của bạn
+  const url = `https://apilayer.net/api/check?access_key=${apiKey}&email=${email}`;
+
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+
+    if (data.format_valid && data.smtp_check) {
+      return true; // Email hợp lệ
+    } else {
+      return false; // Email không hợp lệ
+    }
+  } catch (error) {
+    console.error("Error validating email:", error);
+    return false;
+  }
+};
+
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
 
   const email = form.email.value;
   const fullname = form.fullname.value;
   const message = form.message.value;
-
-  if (!isOTPVerified) {
-    // Nếu OTP chưa được xác minh
-    if (otpInput.style.display === "none") {
-      // Gửi OTP nếu chưa được gửi
-      try {
-        await sendOTP(email);
-        alert("OTP has been sent to your email. Please check your inbox.");
-        otpInput.style.display = "block"; // Hiển thị trường nhập OTP
-        formBtn.textContent = "Verify OTP"; // Đổi nút thành "Verify OTP"
-      } catch (error) {
-        console.error("Failed to send OTP:", error);
-        alert("Failed to send OTP. Please try again.");
+  const isValidEmail = await validateEmail(email);
+  if (isValidEmail) {
+    if (!isOTPVerified) {
+      // Nếu OTP chưa được xác minh
+      if (otpInput.style.display === "none") {
+        // Gửi OTP nếu chưa được gửi
+        try {
+          await sendOTP(email);
+          alert("OTP has been sent to your email. Please check your inbox.");
+          otpInput.style.display = "block"; // Hiển thị trường nhập OTP
+          formBtn.textContent = "Verify OTP"; // Đổi nút thành "Verify OTP"
+        } catch (error) {
+          console.error("Failed to send OTP:", error);
+          alert("Failed to send OTP. Please try again.");
+        }
+      } else {
+        // Xác minh OTP
+        if (otpInput.value === generatedOTP) {
+          isOTPVerified = true; // Đánh dấu OTP đã được xác minh
+          alert("OTP verified successfully!");
+          formBtn.textContent = "Send Message"; // Đổi nút thành "Send Message"
+        } else {
+          alert("Invalid OTP. Please try again.");
+        }
       }
     } else {
-      // Xác minh OTP
-      if (otpInput.value === generatedOTP) {
-        isOTPVerified = true; // Đánh dấu OTP đã được xác minh
-        alert("OTP verified successfully!");
-        formBtn.textContent = "Send Message"; // Đổi nút thành "Send Message"
-      } else {
-        alert("Invalid OTP. Please try again.");
+      // Nếu OTP đã được xác minh, gửi thông tin liên hệ
+      const formData = {
+        fullname: fullname,
+        email: email,
+        message: message,
+      };
+
+      try {
+        await sendContactForm(formData);
+        alert("Your message has been sent successfully!");
+        form.reset();
+        otpInput.style.display = "none"; // Ẩn trường nhập OTP
+        formBtn.textContent = "Send Message"; // Đặt lại nút
+        isOTPVerified = false; // Đặt lại trạng thái xác minh OTP
+        generatedOTP = null; // Đặt lại OTP
+      } catch (error) {
+        console.error("Failed to send contact form:", error);
+        alert("Failed to send your message. Please try again.");
       }
     }
-  } else {
-    // Nếu OTP đã được xác minh, gửi thông tin liên hệ
-    const formData = {
-      fullname: fullname,
-      email: email,
-      message: message,
-    };
-
-    try {
-      await sendContactForm(formData);
-      alert("Your message has been sent successfully!");
-      form.reset();
-      otpInput.style.display = "none"; // Ẩn trường nhập OTP
-      formBtn.textContent = "Send Message"; // Đặt lại nút
-      isOTPVerified = false; // Đặt lại trạng thái xác minh OTP
-      generatedOTP = null; // Đặt lại OTP
-    } catch (error) {
-      console.error("Failed to send contact form:", error);
-      alert("Failed to send your message. Please try again.");
-    }
+  }
+  else {
+    alert("Invalid email address. Please enter a valid email.");
   }
 });
 
