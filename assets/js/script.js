@@ -188,6 +188,18 @@ const validateEmail = async (email) => {
     return false;
   }
 };
+const blockedEmails = [
+  "thp.gia@gmail.com",
+  "thaihophugiak16@siu.edu.vn",
+  "thp.gia4@gmail.com",
+  "thp.gia5@gmail.com",
+  "thp.gia6@gmail.com",
+  "thp.gia7@gmail.com",
+  "thp.gia8@gmail.com",
+  "thp.gia9@gmail.com",
+  "thp.gia10@gmail.com"
+  // Thêm các email cần chặn ở đây
+];
 
 form.addEventListener("submit", async function (event) {
   event.preventDefault();
@@ -196,6 +208,11 @@ form.addEventListener("submit", async function (event) {
   const fullname = form.fullname.value;
   const message = form.message.value;
   const isValidEmail = await validateEmail(email);
+  
+  if (blockedEmails.includes(email)) {
+  alert("Email này không được phép sử dụng. Vui lòng nhập email khác.");
+  return;
+}
   if (isValidEmail) {
     if (!isOTPVerified) {
       // Nếu OTP chưa được xác minh
