@@ -136,35 +136,90 @@ for (let i = 0; i < filterBtn.length; i++) {
 'use strict';
 
 // Initialize EmailJS
-emailjs.init("zRPklF_kQUCgS5tQL"); // Thay YOUR_USER_ID bằng User ID từ EmailJS
+emailjs.init("zRPklF_kQUCgS5tQL"); // Replace with your EmailJS User ID
+
+// Declare variables
+let generatedOTP = null; // This will store the OTP
+let isOTPVerified = false; // Track if OTP is verified
 
 // Contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
 const formBtn = document.querySelector("[data-form-btn]");
+const otpInput = document.querySelector("#otp-input");
 
-// Add event listener to the form
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); // Ngăn chặn hành vi mặc định của form
 
-  // Lấy dữ liệu từ form
-  const formData = {
-    fullname: form.fullname.value,
-    email: form.email.value,
-    message: form.message.value,
+// Function to generate a random OTP
+const generateOTP = () => Math.floor(100000 + Math.random() * 900000).toString();
+
+// Function to send OTP to the user's email
+const sendOTP = (email) => {
+  generatedOTP = generateOTP(); // Generate a new OTP
+
+  const otpData = {
+    to_email: email,
+    otp: `${generatedOTP}`,
   };
 
-  // Gửi email qua EmailJS
-  emailjs.send("personal-site3", "template_712wypv", formData)
-    .then(() => {
-      alert("Email sent successfully!");
-      form.reset(); // Reset form sau khi gửi thành công
-      formBtn.setAttribute("disabled", ""); // Vô hiệu hóa nút gửi
-    })
-    .catch((error) => {
-      console.error("Failed to send email:", error);
-      alert("Failed to send email. Please try again later.");
-    });
+  return emailjs.send("personal-site3", "template_jp41kjr", otpData);
+};
+
+// Function to send contact form data to your email
+const sendContactForm = (formData) => {
+  return emailjs.send("personal-site3", "template_712wypv", formData);
+};
+
+form.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  const email = form.email.value;
+  const fullname = form.fullname.value;
+  const message = form.message.value;
+
+  if (!isOTPVerified) {
+    // Nếu OTP chưa được xác minh
+    if (otpInput.style.display === "none") {
+      // Gửi OTP nếu chưa được gửi
+      try {
+        await sendOTP(email);
+        alert("OTP has been sent to your email. Please check your inbox.");
+        otpInput.style.display = "block"; // Hiển thị trường nhập OTP
+        formBtn.textContent = "Verify OTP"; // Đổi nút thành "Verify OTP"
+      } catch (error) {
+        console.error("Failed to send OTP:", error);
+        alert("Failed to send OTP. Please try again.");
+      }
+    } else {
+      // Xác minh OTP
+      if (otpInput.value === generatedOTP) {
+        isOTPVerified = true; // Đánh dấu OTP đã được xác minh
+        alert("OTP verified successfully!");
+        formBtn.textContent = "Send Message"; // Đổi nút thành "Send Message"
+      } else {
+        alert("Invalid OTP. Please try again.");
+      }
+    }
+  } else {
+    // Nếu OTP đã được xác minh, gửi thông tin liên hệ
+    const formData = {
+      fullname: fullname,
+      email: email,
+      message: message,
+    };
+
+    try {
+      await sendContactForm(formData);
+      alert("Your message has been sent successfully!");
+      form.reset();
+      otpInput.style.display = "none"; // Ẩn trường nhập OTP
+      formBtn.textContent = "Send Message"; // Đặt lại nút
+      isOTPVerified = false; // Đặt lại trạng thái xác minh OTP
+      generatedOTP = null; // Đặt lại OTP
+    } catch (error) {
+      console.error("Failed to send contact form:", error);
+      alert("Failed to send your message. Please try again.");
+    }
+  }
 });
 
 // Enable/disable submit button based on form validation
