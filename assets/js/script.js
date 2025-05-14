@@ -203,21 +203,21 @@ form.addEventListener("submit", async function (event) {
         // Gửi OTP nếu chưa được gửi
         try {
           await sendOTP(email);
-          alert("OTP has been sent to your email. Please check your inbox.");
+          alert("OTP đã được gửi đến email của bạn. Vui lòng kiểm tra hộp thư.");
           otpInput.style.display = "block"; // Hiển thị trường nhập OTP
-          formBtn.textContent = "Verify OTP"; // Đổi nút thành "Verify OTP"
+          formBtn.textContent = "Xác minh OTP"; // Đổi nút thành "Xác minh OTP"
         } catch (error) {
           console.error("Failed to send OTP:", error);
-          alert("Failed to send OTP. Please try again.");
+          alert("Gửi OTP thất bại. Vui lòng thử lại.");
         }
       } else {
         // Xác minh OTP
         if (otpInput.value === generatedOTP) {
           isOTPVerified = true; // Đánh dấu OTP đã được xác minh
-          alert("OTP verified successfully!");
-          formBtn.textContent = "Send Message"; // Đổi nút thành "Send Message"
+          alert("Xác minh OTP thành công!");
+          formBtn.textContent = "Gửi tin nhắn"; // Đổi nút thành "Gửi tin nhắn"
         } else {
-          alert("Invalid OTP. Please try again.");
+          alert("OTP không hợp lệ. Vui lòng thử lại.");
         }
       }
     } else {
@@ -230,20 +230,20 @@ form.addEventListener("submit", async function (event) {
 
       try {
         await sendContactForm(formData);
-        alert("Your message has been sent successfully!");
+        alert("Tin nhắn của bạn đã được gửi thành công!");
         form.reset();
         otpInput.style.display = "none"; // Ẩn trường nhập OTP
-        formBtn.textContent = "Send Message"; // Đặt lại nút
+        formBtn.textContent = "Gửi tin nhắn"; // Đặt lại nút
         isOTPVerified = false; // Đặt lại trạng thái xác minh OTP
         generatedOTP = null; // Đặt lại OTP
       } catch (error) {
         console.error("Failed to send contact form:", error);
-        alert("Failed to send your message. Please try again.");
+        alert("Gửi tin nhắn thất bại. Vui lòng thử lại.");
       }
     }
   }
   else {
-    alert("Invalid email address. Please enter a valid email.");
+    alert("Địa chỉ email không hợp lệ. Vui lòng nhập email hợp lệ.");
   }
 });
 
@@ -267,8 +267,8 @@ const pages = document.querySelectorAll("[data-page]");
 // add event to all nav link
 navigationLinks.forEach((link) => {
   link.addEventListener("click", function () {
-    const targetPage = this.innerHTML.toLowerCase();
-
+    // const targetPage = this.innerHTML.toLowerCase();
+    const targetPage = this.innerHTML.toLowerCase().replace(/\s/g, '').normalize("NFD").replace(/[\u0300-\u036f]/g, "");
     pages.forEach((page) => {
       if (page.dataset.page === targetPage) {
         page.classList.add("active");
