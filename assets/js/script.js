@@ -389,3 +389,56 @@ certificatesCloseBtn.addEventListener("click", () => {
   certificatesModal.classList.remove("active");
   certificatesOverlay.classList.remove("active");
 });
+
+
+
+
+// Timeline toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const timelineToggleBtn = document.getElementById('timelineToggleBtn');
+  const hiddenItems = document.querySelectorAll('.timeline-item-hidden');
+  const toggleText = timelineToggleBtn.querySelector('.toggle-text');
+  const toggleIcon = timelineToggleBtn.querySelector('.toggle-icon');
+  
+  let isExpanded = false;
+
+  timelineToggleBtn.addEventListener('click', function() {
+    isExpanded = !isExpanded;
+    
+    if (isExpanded) {
+      // Hiển thị các mục ẩn
+      hiddenItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.style.display = 'block';
+          setTimeout(() => {
+            item.classList.remove('timeline-item-hidden');
+            item.classList.add('timeline-item-visible');
+          }, 10);
+        }, index * 50); // Stagger animation
+      });
+      
+      toggleText.textContent = 'Thu gọn';
+      timelineToggleBtn.classList.add('expanded');
+    } else {
+      // Ẩn các mục
+      hiddenItems.forEach((item, index) => {
+        setTimeout(() => {
+          item.classList.remove('timeline-item-visible');
+          item.classList.add('timeline-item-hidden');
+          setTimeout(() => {
+            item.style.display = 'none';
+          }, 300);
+        }, index * 30); // Stagger animation
+      });
+      
+      toggleText.textContent = 'Xem thêm';
+      timelineToggleBtn.classList.remove('expanded');
+      
+      // Scroll to timeline section
+      document.getElementById('competition-timeline').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});

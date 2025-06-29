@@ -2034,3 +2034,69 @@ textarea.form-input::-webkit-resizer { display: none; }
     background-position: 0% 50%;
   }
 }
+
+
+
+/* Timeline toggle styles */
+.timeline-item-hidden {
+  display: none;
+}
+
+.timeline-toggle-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.timeline-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--orange-yellow-crayola);
+  color: var(--smoky-black);
+  border: none;
+  border-radius: 14px;
+  font-family: var(--ff-poppins);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-600);
+  cursor: pointer;
+  transition: var(--transition-1);
+}
+
+.timeline-toggle-btn:hover {
+  background: var(--yellow-crayola);
+  transform: translateY(-2px);
+}
+
+.toggle-icon {
+  transition: transform var(--transition-1);
+  font-size: 1.2rem;
+}
+
+.timeline-toggle-btn.expanded .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Animation for timeline items */
+.timeline-item {
+  transition: all 0.3s ease-in-out;
+}
+
+.timeline-item-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.timeline-item-hidden {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline-toggle-btn {
+    font-size: var(--fs-7);
+    padding: 0.5rem 1rem;
+  }
+}
